@@ -13,6 +13,9 @@ returns: An interval for the number pi
 
 
 def PI_Computation_Upper(iterations):
+   i=0
+   b=0.5*1/math.sqrt(3)
+   a=1/math.sqrt(3)
    while i <= iterations:
         # Performs an iterative calculation to compute the length of the side
         # of a circumscribed polygon that has twice the number of sides
