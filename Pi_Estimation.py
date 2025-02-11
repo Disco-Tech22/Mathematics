@@ -14,8 +14,11 @@ returns: An interval for the number pi
 
 def PI_Computation_Upper(iterations):
    i=0
+   #The initial value for number of iterations
    b=0.5*1/math.sqrt(3)
+   # b is half the legnth of one side of the circumscribed polygon
    a=1/math.sqrt(3)
+   #a is the length of a line between the centre of the polygon to one of its vertices
    while i <= iterations:
         # Performs an iterative calculation to compute the length of the side
         # of a circumscribed polygon that has twice the number of sides
