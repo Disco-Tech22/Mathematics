@@ -19,7 +19,7 @@ def PI_Computation_Upper(iterations):
    # b is half the legnth of one side of the circumscribed polygon
    a=1/math.sqrt(3)
    #a is the length of a line between the centre of the polygon to one of its vertices
-   while i <= iterations:
+   while i < iterations:
         # Performs an iterative calculation to compute the length of the side
         # of a circumscribed polygon that has twice the number of sides
         # of the previous polygon.
@@ -45,7 +45,7 @@ def PI_Computation_Lower(iterations):
     c = 0.5
     # c is the length of the one side of the polygon whereby we
     # start with a value of 0.5 which corresponds to an inscribed hexagon.
-    while i <= iterations:
+    while i < iterations:
         a = c / 2
         b = math.sqrt(0.25 - pow(a, 2))
         # Computes the distance from the centre of the polygon
@@ -58,7 +58,7 @@ def PI_Computation_Lower(iterations):
         print(c, ' c')
         i = i + 1
     # Goes to the next iteration.
-    return c * 6 * pow(2,iterations + 1)
+    return c * 6 * pow(2,iterations)
 
 
 # Returns the perimeter of the inscribed polygon after x iterations.
