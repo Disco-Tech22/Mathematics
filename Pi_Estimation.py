@@ -18,47 +18,53 @@ def PI_Computation_Upper(iterations):
     a = 1 / (math.sqrt(3))
     # a is the length of a line between the centre of the polygon and one of the vertices of the polygon.
     i = 0
-    while i <= iterations:
-        # Performs an iterative calculation to compute the length of the side
-        # of a circumscribed polygon that has twice the number of sides
-        # of the previous polygon.
-        b = b / (2 * a + 1)
-        # This is computed from the angle bisection theorem.
-        print(f"iteration:{i}")
-        print(b, ' b')
-        a = math.sqrt(pow(b, 2) + 1 / 4)
-        # Applies pythagoras' theorem to compute the new value for a which will
-        # then generate the new value for b.
-        print(a, ' a')
-        i = i + 1
-    # Goes to the next iteration
-    return 2 * b * 6 * pow(2,iterations+1)
+    if iterations <= 0:
+     return 6 * math.sqrt(2-math.sqrt(3))
+    else:
+     while i <= iterations:
+         # Performs an iterative calculation to compute the length of the side
+         # of a circumscribed polygon that has twice the number of sides
+         # of the previous polygon.
+         b = b / (2 * a + 1)
+         # This is computed from the angle bisection theorem.
+         print(f"iteration:{i}")
+         print(b, ' b')
+         a = math.sqrt(pow(b, 2) + 1 / 4)
+         # Applies pythagoras' theorem to compute the new value for a which will
+         # then generate the new value for b.
+         print(a, ' a')
+         i = i + 1
+             # Goes to the next iteration
+         return 2 * b * 6 * pow(2,iterations)
 
 
 # Returns the perimeter of the circumscribed polygon after a number of iterations.
 
 
 def PI_Computation_Lower(iterations):
-    # Computes the lower bound for pi.
-    i = 0
-    # The initial value for our iteration.
-    c = 0.5
-    # c is the length of the one side of the polygon whereby we
-    # start with a value of 0.5 which corresponds to an inscribed hexagon.
-    while i <= iterations:
-        a = c / 2
-        b = math.sqrt(0.25 - pow(a, 2))
-        # Computes the distance from the centre of the polygon
-        # to the midpoint of one of its sides.
-        print(f"iteration:{i}")
-        print(b, ' b')
-        c = math.sqrt(((pow(a, 2)) + pow((1 / 2 - b), 2)))
-        # Computes the distance from the centre of the polygon
-        #       to the midpoint of one of its sides.
-        print(c, ' c')
-        i = i + 1
-    # Goes to the next iteration.
-    return c * 6 * pow(2,iterations + 1)
+     # Computes the lower bound for pi.
+     i = 0
+     # The initial value for our iteration.
+     c = 0.5
+     # c is the length of the one side of the polygon whereby we
+     # start with a value of 0.5 which corresponds to an inscribed hexagon.
+     if iterations <= 0:
+         return 3
+     else:
+        while i <= iterations:
+         a = c / 2
+         b = math.sqrt(0.25 - pow(a, 2))
+         # Computes the distance from the centre of the polygon
+         # to the midpoint of one of its sides.
+         print(f"iteration:{i}")
+         print(b, ' b')
+         c = math.sqrt(((pow(a, 2)) + pow((1 / 2 - b), 2)))
+         # Computes the distance from the centre of the polygon
+         #       to the midpoint of one of its sides.
+         print(c, ' c')
+         i = i + 1
+         # Goes to the next iteration.
+         return c * 6 * pow(2,iterations)
 
 
 # Returns the perimeter of the inscribed polygon after x iterations.
@@ -68,6 +74,12 @@ def PI_Estimation(iterations):
     # Computes an interval for the value pi.
     print("The value of pi for x =",iterations, " iterations is between ", PI_Computation_Lower(iterations), " and ",
           PI_Computation_Upper(iterations))
+
+
+iterations= 1
+
+# The number of iterations.
+PI_Estimation(iterations)
 
 
 iterations=100
