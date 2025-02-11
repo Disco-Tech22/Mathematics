@@ -64,11 +64,6 @@ def PI_Estimation(iterations):
           PI_Computation_Upper(iterations))
 
 
-iterations= 1
-
-# The number of iterations.
-PI_Estimation(iterations)
-
 
 iterations=100
 # The number of iterations.
